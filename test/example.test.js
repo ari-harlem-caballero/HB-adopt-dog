@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 
@@ -34,8 +35,9 @@ test('this function', (expect) => {
         description: 'what a good doggie',
         age: 14,
         breed: 'fancy'
-    }
+    };
+    
     const actual = renderDogDetail(dog);
 
-    expect.equal(actual.outerHTML, expected)
+    expect.equal(actual.outerHTML, expected);
 });
