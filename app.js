@@ -8,16 +8,8 @@ window.addEventListener('load', async() => {
     const dogs = await getDogs();
     // fetch all dogs
     for (let dog of dogs) {
-        const dogEl = document.createElement('div');
-        const nameEl = document.createElement('p');
-        const dogImg = document.createElement('img');
+        const dogEl = renderDogCard(dog);
 
-        dogEl.classList.add('dog-selection');
-        dogEl.href = `./dogs/?id=${dog.id}`;
-        nameEl.textContent = dog.name;
-        dogImg.src = `./assets/${dog.breed}.jpeg`;
-
-        dogEl.append(nameEl, dogImg);
         dogListContainer.append(dogEl);
     }
 });

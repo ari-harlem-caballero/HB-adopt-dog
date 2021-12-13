@@ -10,28 +10,9 @@ window.addEventListener('load', async() => {
 
     const dog = await getDog(id);
 
-    const dogEl = document.createElement('div');
-    const nameEl = document.createElement('p');
-    const ageEl = document.createElement('p');
-    const breedEl = document.createElement('p');
-    const descriptionEl = document.createElement('p');
-    const dogImg = document.createElement('img');
-
-    dogEl.classList.add('dog-detail');
-    nameEl.classList.add('name');
-    ageEl.classList.add('age');
-    breedEl.classList.add('breed');
-    descriptionEl.classList.add('descript');
-
-    nameEl.textContent = dog.name;
-    ageEl.textContent = `${dog.age} years young`;
-    breedEl.textContent = dog.breed;
-    descriptionEl.textContent = dog.description;
-    dogImg.src = `../assets/${dog.breed}`;
-    
+    const dogDetailEl = renderDogDetail(dog);
     // render and append this dog's details to the container
-    dogEl.append(nameEl, ageEl, breedEl, descriptionEl, dogImg);
-    dogDetailContainer.append(dogEl);
+    dogDetailContainer.append(dogDetailEl);
 });
 // get the id from URL
 // use the id to fetch the dog
