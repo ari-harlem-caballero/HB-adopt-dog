@@ -12,8 +12,10 @@ window.addEventListener('load', async() => {
         const nameEl = document.createElement('p');
         const dogImg = document.createElement('img');
 
+        dogEl.classList.add('dog-selection');
+        dogEl.href = `./dogs/?id=${dog.id}`;
         nameEl.textContent = dog.name;
-        dogImg.src = `./assets./${dog.breed}.jpeg`;
+        dogImg.src = `./assets/${dog.breed}.jpeg`;
 
         dogEl.append(nameEl, dogImg);
         dogListContainer.append(dogEl);
